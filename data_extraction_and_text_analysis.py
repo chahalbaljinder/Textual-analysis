@@ -1,4 +1,4 @@
-#import necessary pacakages
+#import necessary packages
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -11,7 +11,7 @@ nltk.download('stopwords')
 import re
 
 #read the url file into the pandas object
-df = pd.read_excel('Input.xlsx')
+df = pd.read_excel(r'C:\Users\admin\Desktop\github repos\Textual-analysis\Input.xlsx')
 
 #loop throgh each row in the df
 for index, row in df.iterrows():
@@ -45,14 +45,14 @@ for index, row in df.iterrows():
     print("can't get text of {}".format(url_id))
 
   #write title and text to the file
-  file_name = '/gdrive/MyDrive/project/Data_Extraction_and_NLP/TestAssignment/TitleText/' + str(url_id) + '.txt'
+  file_name = r"C:\Users\admin\Desktop\github repos\Textual-analysis\TitleText" + str(url_id) + '.txt'
   with open(file_name, 'w') as file:
     file.write(title + '\n' + article)
 
 # Directories
-text_dir = "/gdrive/MyDrive/project/Data_Extraction_and_NLP/TestAssignment/TitleText"
-stopwords_dir = "/gdrive/MyDrive/project/Data_Extraction_and_NLP/TestAssignment/StopWords"
-sentment_dir = "/gdrive/MyDrive/project/Data_Extraction_and_NLP/TestAssignment/MasterDictionary"
+text_dir = r"C:\Users\admin\Desktop\github repos\Textual-analysis\TitleText"
+stopwords_dir = r"C:\Users\admin\Desktop\github repos\Textual-analysis\StopWords"
+sentment_dir = r"C:\Users\admin\Desktop\github repos\Textual-analysis\MasterDictionary"
 
 # load all stop wors from the stopwords directory and store in the set variable
 stop_words = set()
